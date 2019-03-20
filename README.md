@@ -131,7 +131,7 @@ Then, we progressively add symbols to these sets.
 ```
 expr : { $ } ∪ { ) } = { $, ) }
 z1   : {}
-z2   : {} ∪ follow(expr) = { $ }
+z2   : {} ∪ follow(expr) = { $, ) }
 ```
 
 `expr : Number z2` updates the follow sets:
@@ -139,7 +139,7 @@ z2   : {} ∪ follow(expr) = { $ }
 ```
 expr : { $, ) }
 z1   : {}
-z2   : { $ } ∪ follow(expr) = { $ }
+z2   : { $ } ∪ follow(expr) = { $, ) }
 ```
 
 `z2 : z1 z2` updates the follow sets:
