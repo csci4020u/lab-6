@@ -167,6 +167,14 @@ z1   : { +, -, $ }
 z2   : { $ }
 ```
 
+`expr : '(' expr ')' z2` updates the follow sets:
+
+```
+expr : { $, ) } ∪ follow(z1) = { $, ), +, - }
+z1   : { +, -, $ }
+z2   : { $, ), +, - }
+```
+
 You can try to apply these rules again, and see that the follow sets are no
 longer updated.  This means that we can terminate the iteration.  The follow
 sets are:
